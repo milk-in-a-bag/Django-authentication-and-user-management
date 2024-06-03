@@ -23,6 +23,18 @@
           Delete
         </button>
       </form>
+      {% endif %} {% if user.is_staff %}
+      <form action="" method="POSt">
+        {% csrf_token %}
+        <button
+          type="submit"
+          class="btn btn-warning"
+          name="user-id"
+          value="{{post.author.id}}"
+        >
+          Ban user
+        </button>
+      </form>
       {% endif %}
     </div>
   </div>
