@@ -11,7 +11,7 @@
       <p>{{post.description}}</p>
     </div>
     <div class="">
-      {% if user == post.author %}
+      {% if user == post.author or perms.main.delete_post %}
       <form action="" method="POSt">
         {% csrf_token %}
         <button
